@@ -65,6 +65,15 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>0.0.2</version>
+				<configuration>
+					<warName>abcapitech</warName>
+					<outputDirectory>0.0.2-SNAPSHOT</outputDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

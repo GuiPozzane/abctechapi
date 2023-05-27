@@ -8,16 +8,17 @@ import java.util.Properties;
 
 @Component
 public class VersionComponent {
-    private Properties properties;
-    public VersionComponent()  throws IOException{
-        Properties properties = new Properties();
+
+    private final Properties properties;
+
+    public VersionComponent() throws IOException {
+        properties = new Properties();
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.yml");
         properties.load(inputStream);
     }
-    public String GetVersion() {
 
-        var name = properties.get("build_name");
-        var version = properties.get("build_version");
-        return name + " - " + version;
+    public String getVersion(){
+        return properties.get("build_name") + " - " + properties.get("build_version");
     }
 }
+
